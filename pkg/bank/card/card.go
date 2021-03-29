@@ -1,6 +1,6 @@
 package card
 
-import "bank/pkg/types"
+import "bank/pkg/bank/types"
 
 // Total func
 func Total(card []types.Card) types.Money {
