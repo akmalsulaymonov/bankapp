@@ -100,6 +100,10 @@ func ExampleTotal() {
 			Balance: -10_000_00,
 			Active:  true,
 		},
+		{
+			Balance: -5_000_00,
+			Active:  true,
+		},
 	}
 
 	fmt.Println(Total(cards))
