@@ -110,3 +110,37 @@ func ExampleTotal() {
 
 	// Output: 1500000
 }
+
+func ExampleGetPANsFromPaymentSources() {
+	cards := []types.Card{
+		{
+			Balance: 10_000_00,
+			Active:  true,
+			PAN:     "4444 xxxx xxxx 0001",
+		},
+		{
+			Balance: 2_000_00,
+			Active:  false,
+			PAN:     "4444 xxxx xxxx 0002",
+		},
+		{
+			Balance: 5_000_00,
+			Active:  true,
+			PAN:     "4444 xxxx xxxx 0003",
+		},
+		{
+			Balance: -10_000_00,
+			Active:  true,
+			PAN:     "4444 xxxx xxxx 0004",
+		},
+		{
+			Balance: -5_000_00,
+			Active:  true,
+			PAN:     "4444 xxxx xxxx 0005",
+		},
+	}
+
+	fmt.Println(PaymentSources(cards))
+
+	// Output: [{card 4444 xxxx xxxx 0001 1000000} {card 4444 xxxx xxxx 0003 500000}]
+}
